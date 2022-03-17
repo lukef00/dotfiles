@@ -1,0 +1,52 @@
+* {
+  fg: #cbddea;
+  bg: #18101d;
+  primary: #4AA9C3;
+}
+
+window {
+  width: 25%;
+  location: north west;
+  anchor: north west;
+  y-offset: 25;
+  border: 3px solid;
+  border-color: @primary;
+}
+
+listview {
+  background-color: @bg;
+  dynamic: true;
+  fixed-height: false;
+}
+
+inputbar, prompt, entry, case-indicator, num-filtered-rows, num-rows {
+  background-color: @primary;
+  text-color: @bg;
+}
+
+element, element-icon, element-text, message, textbox {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element-icon {
+  padding: 0 10px 0 0;
+  size: 2.2ch;
+}
+
+mainbox  {
+  background-color: @primary;
+}
+
+prompt, entry {
+  padding: 10px 5px;
+}
+
+element {
+  padding: 8px 5px;
+}
+
+element.selected, element-text.selected, element-icon.selected {
+  background-color: @primary;
+  text-color: @bg;
+}
