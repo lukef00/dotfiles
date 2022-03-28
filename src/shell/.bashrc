@@ -11,16 +11,6 @@ alias ta='tmux attach'
 alias td='tmux detach'
 alias tl='tmuxp load'
 
-# install packages from aur and remove build dependencies
-auri() {
-  AUR_REPO="${HOME}/repos/aur"
-  mkdir -p "${AUR_REPO}"
-  cd "${AUR_REPO}"
-  git clone "https://aur.archlinux.org/${1}.git"
-  cd "${1}"
-  makepkg -sirc
-}
-
 # change directory with fzf
 fd() {
   local dir

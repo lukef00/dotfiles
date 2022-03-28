@@ -5,18 +5,18 @@
 }
 
 window {
-  width: 25%;
-  location: north west;
-  anchor: north west;
-  y-offset: 25;
+  width: 600;
+  location: center;
+  anchor: center;
   border: 3px solid;
   border-color: @primary;
 }
 
 listview {
   background-color: @bg;
-  dynamic: true;
+  dynamic: false;
   fixed-height: false;
+  lines: 7;
 }
 
 inputbar, prompt, entry, case-indicator, num-filtered-rows, num-rows {
