@@ -10,6 +10,8 @@ alias sb="source ${HOME}/.bashrc"
 alias ta='tmux attach'
 alias td='tmux detach'
 alias tl='tmuxp load'
+#alias reboot='loginctl reboot'
+#alias poweroff='loginctl poweroff'
 
 # change directory with fzf
 fd() {

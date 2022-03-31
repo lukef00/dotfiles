@@ -8,56 +8,12 @@ hc() {
 
 hc emit_hook reload
 
-# autostart
-~/.fehbg
 
 # remove all existing keybindings
 hc keyunbind --all
 
 # keybindings
 Mod=Mod4   # Use the super key as the main modifier
-
-# program launcher
-hc keybind $Mod-d spawn rofi -show drun
-
-# switch to another window 
-hc keybind $Mod-w spawn rofi -show window
-
-# lock screen
-hc keybind $Mod-Shift-x spawn i3lock -fei ~/images/lockscreen.png
-
-# this script changes colors for hlwm, dunst and rofi
-hc keybind $Mod-b spawn wal --iterative -i ~/images -o ~/scripts/colors.sh
-
-# music player daemon
-hc keybind $Mod-F9 spawn mpc prev
-hc keybind $Mod-F10 spawn mpc toggle
-hc keybind $Mod-F11 spawn mpc next
-
-# screenshots
-hc keybind Print spawn ~/scripts/screenshot.sh screen
-hc keybind Shift-Print spawn ~/scripts/screenshot.sh window
-hc keybind Ctrl-Print spawn ~/scripts/screenshot.sh selection
-
-# audio - speaker volume
-hc keybind XF86AudioMute spawn pactl set-sink-mute @DEFAULT_SINK@ toggle
-hc keybind XF86AudioLowerVolume spawn pactl set-sink-volume @DEFAULT_SINK@ -2%
-hc keybind XF86AudioRaiseVolume spawn pactl set-sink-volume @DEFAULT_SINK@ +2%
-hc keybind $Mod-F6 spawn pactl set-sink-mute @DEFAULT_SINK@ toggle
-hc keybind $Mod-F7 spawn pactl set-sink-volume @DEFAULT_SINK@ -2%
-hc keybind $Mod-F8 spawn pactl set-sink-volume @DEFAULT_SINK@ +2%
-
-# audio - microphone
-hc keybind $Mod-XF86AudioLowerVolume chain , spawn pactl set-source-volume @DEFAULT_SOURCE@ -2% , spawn polybar-msg action microphone hook 0
-hc keybind $Mod-XF86AudioRaiseVolume chain , spawn pactl set-source-volume @DEFAULT_SOURCE@ +2% , spawn polybar-msg action microphone hook 0
-hc keybind $Mod-Shift-F7 chain , spawn pactl set-source-volume @DEFAULT_SOURCE@ -2% , spawn polybar-msg action microphone hook 0
-hc keybind $Mod-Shift-F8 chain , spawn pactl set-source-volume @DEFAULT_SOURCE@ +2% , spawn polybar-msg action microphone hook 0
-
-# brightness
-hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
-hc keybind XF86MonBrightnessUp spawn xbacklight -inc 10
-hc keybind $Mod-F2 spawn xbacklight -dec 10
-hc keybind $Mod-F3 spawn xbacklight -inc 10
 
 hc keybind $Mod-Shift-e quit
 hc keybind $Mod-Shift-r reload
@@ -164,7 +120,7 @@ done
 hc set window_gap 0
 hc set frame_padding 0
 hc set frame_active_opacity 50
-hc set frame_normal_opacity 25
+hc set frame_normal_opacity 0
 hc set smart_window_surroundings off
 hc set smart_frame_surroundings off
 hc set mouse_recenter_gap 0
@@ -190,16 +146,14 @@ hc set tree_style '╾│ ├└╼─┐'
 
 # unlock, just to be sure
 hc unlock
-~/scripts/colors.sh
 
-# do multi monitor setup here, e.g.:
-# hc set_monitors 1280x1024+0+0 1280x1024+1280+0
-# or simply:
-# hc detect_monitors
+# colorscheme
+BG="#282828"
+FG="#ebdbb2"
+URGENT="#fb4934"
+ACTIVE="#b8bb26"
 
-# panel=~/.config/herbstluftwm/panel.sh
-# [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-# for monitor in $(hc list_monitors | cut -d: -f1) ; do
-#     # start it on each monitor
-#     "$panel" "$monitor" &
-# done
+hc set frame_border_active_color ${BG}
+hc attr theme.active.color ${ACTIVE}
+hc attr theme.normal.color "${BG}40"
+
