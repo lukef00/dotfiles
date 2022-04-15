@@ -18,6 +18,8 @@ local map = vim.api.nvim_set_keymap
 
 -- colorscheme
 cmd([[colorscheme base16-gruvbox-dark-hard]])
+cmd([[hi Normal ctermbg=NONE guibg=NONE]])
+cmd([[hi LineNr ctermbg=NONE guibg=NONE]])
 
 opt.termguicolors = true
 opt.relativenumber = true
@@ -27,13 +29,13 @@ opt.splitbelow = true
 opt.splitright = true
 opt.hlsearch = false
 opt.wrap = false
-opt.cursorline = true
 opt.expandtab = true
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.laststatus = 3
 opt.clipboard = "unnamedplus"
-opt.colorcolumn = "81,82"
+opt.cursorline = false
+opt.colorcolumn = "81"
 opt.completeopt = "menu,menuone,noselect"
 
 local opts = { noremap = true }

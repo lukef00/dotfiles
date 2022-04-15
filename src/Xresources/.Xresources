@@ -1,5 +1,5 @@
 URxvt.scrollBar: false
-URxvt.font: xft:FiraMono NF:size=11
+URxvt.font: xft:JetBrainsMono NF:size=11
 URxvt.transparent: true
 URxvt.shading: 15
 
