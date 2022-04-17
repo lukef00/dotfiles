@@ -12,6 +12,7 @@ hc emit_hook reload
 sxhkd &
 picom &
 ~/.fehbg
+~/scripts/polybar.sh
 
 # remove all existing keybindings
 hc keyunbind --all

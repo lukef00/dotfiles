@@ -10,10 +10,6 @@ super + d
 super + w
     rofi -show window
 
-# lock screen
-super + shift + x 
-    i3lock -fei ~/images/lockscreen.png
-
 # music player daemon
 super + F{9,10,11}
     mpc {prev,toggle,next}
@@ -43,3 +39,7 @@ super + F{2,3}
 # wallpaper
 super + b
     ~/scripts/setwall.sh
+
+# powermenu
+super + x 
+    ~/scripts/powermenu.sh
