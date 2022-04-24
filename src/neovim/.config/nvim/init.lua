@@ -44,6 +44,9 @@ glob.mapleader = " "
 -- reload current file (use only for vim or lua files related to neovim config)
 map("n", "<leader>r", ":so %<cr>", opts)
 
+-- compile
+map("n", "<leader>m", ":make<cr>", opts)
+
 -- file explorer
 map("n", "<leader>n", ":NvimTreeToggle<cr>", opts)
 map("n", "<leader>e", ":NvimTreeFocus<cr>", opts)

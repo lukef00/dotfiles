@@ -1,3 +1,4 @@
 ncmpcpp_directory = ~/.mpd-data/ncmpcpp
 mpd_music_dir= ~/music
+fetch_lyrics_for_current_song_in_background = yes
 #execute_on_song_change = ~/scripts/current-song.sh

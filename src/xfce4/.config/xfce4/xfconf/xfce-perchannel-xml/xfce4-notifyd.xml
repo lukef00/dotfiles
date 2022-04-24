@@ -4,6 +4,7 @@
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
       <value type="string" value="chromium"/>
+      <value type="string" value="FileZilla"/>
       <value type="string" value="org.qbittorrent.qBittorrent"/>
       <value type="string" value="xfce4-settings-helper"/>
     </property>

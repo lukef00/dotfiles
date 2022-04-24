@@ -11,6 +11,7 @@ hc emit_hook reload
 # autostart
 sxhkd &
 picom &
+unclutter &
 ~/.fehbg
 ~/scripts/polybar.sh
 
@@ -123,7 +124,7 @@ done
 
 hc set window_gap 0
 hc set frame_padding 0
-hc set frame_active_opacity 50
+hc set frame_active_opacity 20
 hc set frame_normal_opacity 0
 hc set smart_window_surroundings off
 hc set smart_frame_surroundings off
