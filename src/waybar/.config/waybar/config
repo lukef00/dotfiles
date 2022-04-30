@@ -1,0 +1,36 @@
+{
+    "layer": "bottom",
+    "output": "eDP-1",
+    "modules-left": ["sway/workspaces"],
+    "modules-center": [],
+    "modules-right": ["pulseaudio", "clock"],
+
+    "sway/workspaces": {
+        "all-outputs": true,
+        "disable-scroll": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "default": "",
+            "focused": "",
+            "1": "",
+            "2": ""
+        }
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "timezone": "Europe/Warsaw",
+        "locale": "pl_PL.UTF-8"
+    },
+
+    "pulseaudio": {
+        "format": "墳 {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-muted": "muted",
+        "on-click": "pavucontrol",
+        "format-icons": {
+            "headphones": ""
+        }
+    }
+}
+# vim: ft=json

@@ -7,11 +7,16 @@
 
 alias ls='ls --color=auto'
 alias sb="source ${HOME}/.bashrc"
+
+# tmux and tmuxp aliases
 alias ta='tmux attach'
 alias td='tmux detach'
+alias tks='tmux kill-session'
 alias tl='tmuxp load'
-#alias reboot='loginctl reboot'
-#alias poweroff='loginctl poweroff'
+
+# void commands for power management without using sudo
+alias reboot='loginctl reboot'
+alias poweroff='loginctl poweroff'
 
 # change directory with fzf
 fd() {
@@ -81,3 +86,7 @@ export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  dbus-run-session sway
+fi

@@ -34,7 +34,7 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.laststatus = 3
 opt.clipboard = "unnamedplus"
-opt.cursorline = false
+opt.cursorline = true
 opt.colorcolumn = "81"
 opt.completeopt = "menu,menuone,noselect"
 
@@ -43,7 +43,6 @@ glob.mapleader = " "
 
 -- reload current file (use only for vim or lua files related to neovim config)
 map("n", "<leader>r", ":so %<cr>", opts)
-
 -- compile
 map("n", "<leader>m", ":make<cr>", opts)
 
