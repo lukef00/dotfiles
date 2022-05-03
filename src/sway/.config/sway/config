@@ -164,6 +164,8 @@ workspace 10 output $laptop
 assign [app_id="Firefox"] workspace number 1
 assign [app_id="org.qutebrowser.qutebrowser"] workspace number 1
 assign [app_id="org.pwmt.zathura"] workspace number 1
+assign [app_id="mpv"] workspace number 4
+assign [app_id="org.qbittorrent.qBittorrent"] workspace number 10
 
 #
 # Layout stuff:
@@ -171,13 +173,13 @@ assign [app_id="org.pwmt.zathura"] workspace number 1
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    # bindsym $mod+b splith
+    # bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     # bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+e splitt
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen

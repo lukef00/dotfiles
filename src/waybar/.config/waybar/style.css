@@ -1,0 +1,29 @@
+* {
+    font-family: "Fira Mono";
+    font-size: 12px;
+    padding: 0;
+    border-radius: 5px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    color: #aaaaaa;
+}
+
+#workspaces button.focused {
+    color: #000000;
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+#pulseaudio, #disk, #network, #memory, #clock {
+    margin: 0 5px;
+    padding: 0 10px;
+    color: #000000;
+    background-color: #f5f5f5;
+}

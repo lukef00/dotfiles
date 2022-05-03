@@ -1,36 +1,56 @@
 {
     "layer": "bottom",
     "output": "eDP-1",
+    "height": 20,
     "modules-left": ["sway/workspaces"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "clock"],
+    "modules-right": ["pulseaudio", "memory", "network", "disk", "clock"],
 
     "sway/workspaces": {
         "all-outputs": true,
         "disable-scroll": true,
-        "format": "{name} {icon}",
+        "format": "{icon}",
         "format-icons": {
-            "default": "",
-            "focused": "",
-            "1": "",
-            "2": ""
+            "default": "<span font='14' rise='-3000'></span>",
+            "1": "<span font='14' rise='-3000'></span>",
+            "2": "<span font='14' rise='-3000'></span>",
+            "10": "<span font='14' rise='-3000'></span>"
         }
     },
 
     "clock": {
-        "format": "{:%H:%M}",
+        "format": "<span font='14' rise='-2000'></span> {:%A, %d %b %H:%M}",
         "timezone": "Europe/Warsaw",
         "locale": "pl_PL.UTF-8"
     },
 
+    "disk": {
+        "interval": 300,
+        "format": "<span font='14' rise='-3000'></span> {free}",
+        "path": "/home"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "<span font='14' rise='-3000'></span> {used:0.2f}GB"
+    },
+
+
     "pulseaudio": {
-        "format": "墳 {volume}%",
-        "format-bluetooth": " {volume}%",
+        "format": "<span font='14' rise='-3000'>墳</span> {volume}%",
+        "format-bluetooth": "<span font='14' rise='-3000'></span> {volume}%",
         "format-muted": "muted",
         "on-click": "pavucontrol",
         "format-icons": {
-            "headphones": ""
+            "headphones": "<span font='14' rise='-3000'></span>"
         }
+    },
+    
+    "network": {
+        "interface": "wlo1",
+        "interval": 10,
+        "format-wifi": "<span font='14' rise='-3000'></span> {essid}",
+        "format-disconnected": "disconnected"
     }
 }
 # vim: ft=json

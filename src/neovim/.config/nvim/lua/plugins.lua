@@ -23,7 +23,7 @@ return require('packer').startup(function()
     }
 
     -- colorscheme
-    use 'RRethy/nvim-base16'
+    use 'sainnhe/gruvbox-material'
 
     -- file explorer
     use {

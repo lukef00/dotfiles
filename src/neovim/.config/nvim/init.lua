@@ -2,12 +2,12 @@
 require("plugins")
 
 -- plugin configuration files
-require("plugins.tree-sitter")
-require("plugins.telescope")
-require("plugins.nvim-tree")
-require("plugins.comment")
-require("plugins.lsp")
-require("plugins.bufferline")
+require("configs.tree-sitter")
+require("configs.telescope")
+require("configs.nvim-tree")
+require("configs.comment")
+require("configs.lsp")
+require("configs.bufferline")
 
 
 local opt = vim.o
@@ -17,9 +17,11 @@ local map = vim.api.nvim_set_keymap
 
 
 -- colorscheme
-cmd([[colorscheme base16-gruvbox-dark-hard]])
-cmd([[hi Normal ctermbg=NONE guibg=NONE]])
-cmd([[hi LineNr ctermbg=NONE guibg=NONE]])
+glob.gruvbox_material_background="hard"
+glob.gruvbox_material_transparent_background=0
+cmd([[colorscheme gruvbox-material]])
+-- cmd([[hi Normal ctermbg=NONE guibg=NONE]])
+-- cmd([[hi LineNr ctermbg=NONE guibg=NONE]])
 
 opt.termguicolors = true
 opt.relativenumber = true
@@ -33,11 +35,11 @@ opt.expandtab = true
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.laststatus = 3
+opt.swapfile = false
 opt.clipboard = "unnamedplus"
-opt.cursorline = true
-opt.colorcolumn = "81"
+-- opt.cursorline = true
+-- opt.colorcolumn = "81"
 opt.completeopt = "menu,menuone,noselect"
-
 local opts = { noremap = true }
 glob.mapleader = " "
 

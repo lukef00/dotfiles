@@ -18,6 +18,12 @@ alias tl='tmuxp load'
 alias reboot='loginctl reboot'
 alias poweroff='loginctl poweroff'
 
+# package manager aliases
+alias pmi='sudo xbps-install'       # install package
+alias pmu='sudo xbps-install -Su'   # update system
+alias pmr='sudo xbps-remove'        # remove package
+alias pms='xbps-query -Rs'          # search for package in repositories
+
 # change directory with fzf
 fd() {
   local dir
@@ -82,6 +88,9 @@ parse_git_dirty() {
 export PS1="\[\033[1;33m\][\u@\[\033[35m\]\h] \[\033[34m\]\w \[\033[31m\]\`parse_git_branch\`\[\033[0;m\]\n\$ "
 export PATH="${PATH}:${HOME}/scripts:${HOME}/.nvm/versions/node/v17.9.0/bin"
 export EDITOR='nvim'
+
+# GPG
+export GPG_TTY="$(tty)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
