@@ -20,8 +20,6 @@ local map = vim.api.nvim_set_keymap
 glob.gruvbox_material_background="hard"
 glob.gruvbox_material_transparent_background=0
 cmd([[colorscheme gruvbox-material]])
--- cmd([[hi Normal ctermbg=NONE guibg=NONE]])
--- cmd([[hi LineNr ctermbg=NONE guibg=NONE]])
 
 opt.termguicolors = true
 opt.relativenumber = true
@@ -38,8 +36,10 @@ opt.laststatus = 3
 opt.swapfile = false
 opt.clipboard = "unnamedplus"
 -- opt.cursorline = true
--- opt.colorcolumn = "81"
+opt.colorcolumn = "81"
 opt.completeopt = "menu,menuone,noselect"
+
+-- keybinds
 local opts = { noremap = true }
 glob.mapleader = " "
 

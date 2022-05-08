@@ -24,6 +24,9 @@ alias pmu='sudo xbps-install -Su'   # update system
 alias pmr='sudo xbps-remove'        # remove package
 alias pms='xbps-query -Rs'          # search for package in repositories
 
+# apply pywal colorscheme to terminal
+(cat ~/.cache/wal/sequences &)
+
 # change directory with fzf
 fd() {
   local dir

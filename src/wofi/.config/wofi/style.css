@@ -1,0 +1,14 @@
+#window, #outer-box, #inner-box, #entry {
+    background-color: --wofi-color0;
+    color: --wofi-color7;
+}
+
+#input {
+    background-color: --wofi-color4;
+    color: --wofi-color0;
+}
+
+#entry:selected {
+    background-color: --wofi-color6;
+    color: --wofi-color0;
+}

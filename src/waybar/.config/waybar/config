@@ -3,54 +3,86 @@
     "output": "eDP-1",
     "height": 20,
     "modules-left": ["sway/workspaces"],
-    "modules-center": [],
-    "modules-right": ["pulseaudio", "memory", "network", "disk", "clock"],
+    "modules-center": ["custom/mpd-icon", "mpd"],
+    "modules-right": [
+        "custom/pulseaudio-icon", "pulseaudio",
+		"custom/memory-icon", "memory",
+		"custom/network-icon", "network",
+		"custom/disk-icon", "disk",
+		"custom/clock-icon", "clock",
+    ],
+		
 
     "sway/workspaces": {
         "all-outputs": true,
         "disable-scroll": true,
-        "format": "{icon}",
+        "format": "{index} {icon}",
         "format-icons": {
-            "default": "<span font='14' rise='-3000'></span>",
-            "1": "<span font='14' rise='-3000'></span>",
-            "2": "<span font='14' rise='-3000'></span>",
-            "10": "<span font='14' rise='-3000'></span>"
+            "default": "<span font='14' rise='-2000'></span>",
+            "1": "<span font='14' rise='-2000'></span>",
+            "2": "<span font='14' rise='-2000'></span>",
+            "4": "<span font='14' rise='-2000'>ﳜ</span>",
+            "10": "<span font='14' rise='-2000'></span>"
         }
     },
 
+    "mpd": {
+        "format": "{artist} - {album} - {title}"
+    },
+
+    "custom/mpd-icon": {
+        "format": ""
+    },
+
+    "custom/pulseaudio-icon": {
+        "format": "墳"
+    },
+
+    "custom/memory-icon": {
+        "format": ""
+    },
+
+    "custom/network-icon": {
+        "format": ""
+    },
+
+    "custom/disk-icon": {
+        "format": ""
+    },
+
+    "custom/clock-icon": {
+        "format": ""
+    },
+
     "clock": {
-        "format": "<span font='14' rise='-2000'></span> {:%A, %d %b %H:%M}",
+        "format": "{:%A, %d %b %H:%M}",
         "timezone": "Europe/Warsaw",
         "locale": "pl_PL.UTF-8"
     },
 
     "disk": {
         "interval": 300,
-        "format": "<span font='14' rise='-3000'></span> {free}",
+        "format": "{free}",
         "path": "/home"
     },
 
     "memory": {
         "interval": 30,
-        "format": "<span font='14' rise='-3000'></span> {used:0.2f}GB"
+        "format": "{used:0.2f}GB"
     },
 
-
     "pulseaudio": {
-        "format": "<span font='14' rise='-3000'>墳</span> {volume}%",
-        "format-bluetooth": "<span font='14' rise='-3000'></span> {volume}%",
+        "format": "{volume}%",
+        "format-bluetooth": "{volume}%",
         "format-muted": "muted",
         "on-click": "pavucontrol",
-        "format-icons": {
-            "headphones": "<span font='14' rise='-3000'></span>"
-        }
     },
     
     "network": {
         "interface": "wlo1",
         "interval": 10,
-        "format-wifi": "<span font='14' rise='-3000'></span> {essid}",
+        "format-wifi": "{essid}",
         "format-disconnected": "disconnected"
-    }
+    },
 }
 # vim: ft=json

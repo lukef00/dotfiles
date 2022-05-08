@@ -1,29 +1,37 @@
+@import "/home/luke/.cache/wal/colors-waybar.css";
+
 * {
     font-family: "Fira Mono";
     font-size: 12px;
     padding: 0;
-    border-radius: 5px;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
-    color: #ffffff;
+    background-color: @background;
+    color: @foreground;
 }
 
 #workspaces button {
     padding: 0 4px;
-    color: #aaaaaa;
+    color: @foreground;
 }
 
 #workspaces button.focused {
-    color: #000000;
-    background-color: #f5f5f5;
+    color: @color6;
     font-weight: bold;
 }
 
-#pulseaudio, #disk, #network, #memory, #clock {
-    margin: 0 5px;
-    padding: 0 10px;
-    color: #000000;
-    background-color: #f5f5f5;
+#mpd, #pulseaudio, #disk, #network, #memory, #clock {
+    margin: 0 10px;
+    color: @foreground;
+}
+
+#custom-pulseaudio-icon, #custom-disk-icon, #custom-network-icon, #custom-memory-icon, #custom-clock-icon {
+    color: @color6;
+    font-size: 20px;
+}
+
+#custom-mpd-icon {
+    color: @color3;
+    font-size: 20px;
 }

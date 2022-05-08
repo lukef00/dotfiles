@@ -1,0 +1,10 @@
+mode=run
+prompt=Choose application
+allow_markup=true
+term=foot
+width=400
+hide_scroll=true
+insensitive=true
+lines=7
+gtk_dark=true
+allow_images=true
