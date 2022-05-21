@@ -6,3 +6,4 @@ gh https://github.com/
 noise https://www.youtube.com/watch?v=5qap5aO4i9A
 gerbera http://pi4.localdomain:49152/
 transmission http://pi4.localdomain:9091/transmission/web/
+local server http://localhost:8000/

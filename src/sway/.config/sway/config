@@ -93,6 +93,11 @@ input "type:keyboard" {
     bindsym $mod+F2 exec --no-startup-id brightnessctl s 10%-
     bindsym $mod+F3 exec --no-startup-id brightnessctl s 10%+
 
+    # mpd
+    bindsym $mod+F9 exec --no-startup-id mpc prev
+    bindsym $mod+F10 exec --no-startup-id mpc toggle
+    bindsym $mod+F11 exec --no-startup-id mpc next
+
 
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
@@ -102,7 +107,7 @@ input "type:keyboard" {
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaymsg exit
 #
 # Moving around:
 #
@@ -177,7 +182,7 @@ assign [app_id="org.qbittorrent.qBittorrent"] workspace number 10
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
-    # bindsym $mod+w layout tabbed
+    bindsym $mod+t layout tabbed
     bindsym $mod+e splitt
 
     # Make the current focus fullscreen
