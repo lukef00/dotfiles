@@ -8,6 +8,7 @@ require("configs.nvim-tree")
 require("configs.comment")
 require("configs.lsp")
 require("configs.bufferline")
+require("configs.statusline")
 
 
 local opt = vim.o
@@ -17,9 +18,10 @@ local map = vim.api.nvim_set_keymap
 
 
 -- colorscheme
-glob.gruvbox_material_background="hard"
-glob.gruvbox_material_transparent_background=0
-cmd([[colorscheme gruvbox-material]])
+glob.gruvbox_italic=1
+glob.gruvbox_bold=1
+glob.gruvbox_contrast_dark="hard"
+cmd([[colorscheme gruvbox]])
 
 opt.termguicolors = true
 opt.relativenumber = true
@@ -35,8 +37,8 @@ opt.shiftwidth = 4
 opt.laststatus = 3
 opt.swapfile = false
 opt.clipboard = "unnamedplus"
--- opt.cursorline = true
-opt.colorcolumn = "81"
+opt.cursorline = true
+opt.colorcolumn = "81,82"
 opt.completeopt = "menu,menuone,noselect"
 
 -- keybinds
@@ -53,7 +55,7 @@ map("n", "<leader>n", ":NvimTreeToggle<cr>", opts)
 map("n", "<leader>e", ":NvimTreeFocus<cr>", opts)
 
 -- close buffer
-map("n", "<leader>d", ":bd<cr>", opts)
+map("n", "<leader>d", ":bp|bd#<cr>", opts)
 
 -- switch between splits
 map("n", "<leader>h", ":wincmd h<cr>", opts)

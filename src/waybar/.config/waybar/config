@@ -1,18 +1,17 @@
 {
-    "layer": "bottom",
+    "spacing": 15,
     "output": "eDP-1",
-    "height": 20,
     "modules-left": ["sway/workspaces"],
-    "modules-center": ["custom/mpd-icon", "mpd"],
+    "modules-center": ["mpd"],
     "modules-right": [
-        "custom/pulseaudio-icon", "pulseaudio",
-		"custom/memory-icon", "memory",
-		"custom/network-icon", "network",
-		"custom/disk-icon", "disk",
-		"custom/clock-icon", "clock",
+        "pulseaudio",
+        "battery",
+		"network",
+		"memory",
+		"disk",
+		"clock"
     ],
 		
-
     "sway/workspaces": {
         "all-outputs": true,
         "disable-scroll": true,
@@ -27,62 +26,77 @@
     },
 
     "mpd": {
-        "format": "{artist} - {album} - {title}"
-    },
-
-    "custom/mpd-icon": {
-        "format": ""
-    },
-
-    "custom/pulseaudio-icon": {
-        "format": "墳"
-    },
-
-    "custom/memory-icon": {
-        "format": ""
-    },
-
-    "custom/network-icon": {
-        "format": ""
-    },
-
-    "custom/disk-icon": {
-        "format": ""
-    },
-
-    "custom/clock-icon": {
-        "format": ""
-    },
-
-    "clock": {
-        "format": "{:%A, %d %b %H:%M}",
-        "timezone": "Europe/Warsaw",
-        "locale": "pl_PL.UTF-8"
-    },
-
-    "disk": {
-        "interval": 300,
-        "format": "{free}",
-        "path": "/home"
-    },
-
-    "memory": {
-        "interval": 30,
-        "format": "{used:0.2f}GB"
+        "format": "<span font='14' rise='-2000'></span> {artist} - {album} - {title}"
     },
 
     "pulseaudio": {
-        "format": "{volume}%",
+        "states": {
+            "overflow": 101,
+            "loud": 70,
+            "regular": 41,
+            "quiet": 0
+        },
+        "format": "{icon} {volume}%",
+        "format-icons": [
+            "<span font='14' rise='-3000'>奄</span>",
+            "<span font='14' rise='-3000'>奔</span>", 
+            "<span font='14' rise='-3000'>墳</span>", 
+            "<span font='14' rise='-3000'>墳</span>"
+        ],
+        "format-muted": "{icon} muted",
         "format-bluetooth": "{volume}%",
         "format-muted": "muted",
-        "on-click": "pavucontrol",
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "bat": "BAT1",
+        "interval": 300,
+        "states": {
+            "excellent": 95,
+            "good": 75,
+            "average": 50,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "excellent": "<span font='14' rise='-2000'></span>", 
+            "good": "<span font='14' rise='-2000'></span>", 
+            "average": "<span font='14' rise='-2000'></span>", 
+            "warning": "<span font='14' rise='-2000'></span>", 
+            "critical": "<span font='14' rise='-2000'></span>"
+        }
     },
     
     "network": {
         "interface": "wlo1",
         "interval": 10,
-        "format-wifi": "{essid}",
-        "format-disconnected": "disconnected"
+        "format-wifi": "<span font='14' rise='-2000'>直</span> {essid} {signalStrength}%",
+        "format-disconnected": "<span font='14' rise='-2000'>睊</span>",
+        "states": {
+            "good": 84,
+            "regular": 64,
+            "warning": 0
+        }
     },
+
+    "memory": {
+        "interval": 30,
+        "format": "<span font='14' rise='-2000'></span> {used:0.2f}GB"
+    },
+
+    "disk": {
+        "interval": 300,
+        "format": "<span font='14' rise='-2000'></span> {free}",
+        "path": "/home"
+    },
+
+    "clock": {
+        "format": "<span font='14' rise='-2000'></span> {:%A, %d %b %H:%M}",
+        "timezone": "Europe/Warsaw",
+        "locale": "pl_PL.UTF-8"
+    }
+
 }
 # vim: ft=json

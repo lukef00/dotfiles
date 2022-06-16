@@ -5,6 +5,7 @@ return require('packer').startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use "ray-x/lsp_signature.nvim"
     use 'onsails/lspkind-nvim'
+    use 'morhetz/gruvbox'
 
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     -- lsp
@@ -21,7 +22,10 @@ return require('packer').startup(function()
             { 'saadparwaiz1/cmp_luasnip' },
         },
     }
-
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
     -- colorscheme
     use 'sainnhe/gruvbox-material'
 

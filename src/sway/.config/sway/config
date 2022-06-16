@@ -1,63 +1,50 @@
-# pywal colors
-include ~/.cache/wal/colors-sway
+set $bg #1d2021
+set $fg #fbf1c7
+set $prim #b16286
+set $urgent #cc241d
+set $indicator #d79921
 
-# sway theme
 # client.<class> <border <background> <text> [<indicator> <child-border>]
-client.focused $color3 $color0 $color7 $color6 $color3
-client.focused_inactive $color0 $color0 $color7 $color0 $color0
-client.urgent $color3 $color0 $color7 $color6 $color5
-client.unfocused $color0 $color0 $color7 $color0 $color0
+client.focused $prim $prim $bg $indicator $prim
+client.focused_inactive $bg $bg $fg $bg $bg
+client.urgent $urgent $urgent $fg $indicator $urgent
+client.unfocused $bg $bg $fg $bg $bg
 
 # autostart
-exec --no-startup-id pipewire
-exec --no-startup-id pipewire-pulse
 exec --no-startup-id wal -R
 exec --no-startup-id mako
-exec --no-startup-id mpd
 
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
 set $term foot
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
 set $menu wofi -S run
 
+# border
 default_border pixel 3
+
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+set $wallpaper ~/images/wallpaper.png
 output * bg $wallpaper fill
-#
-# Example configuration:
-#
+
 output HDMI-A-1 {
     resolution 1440x900 
     position 0,0
 }
+
 # lockscreen
 bindsym $mod+Shift+x exec --no-startup-id swaylock -f -c 000000
 exec swayidle -w \
          timeout 600 'swaylock -f -c 000000' \
          timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 10 minutes of inactivity, then turn off
-# your displays after 20 minutes, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
+
 input "type:keyboard" {
     xkb_layout pl,pl
     dwt disabled
@@ -70,8 +57,6 @@ input "type:keyboard" {
 #
 # Basics:
 #
-    # wallpaper
-    bindsym $mod+b exec --no-startup-id wal --iterative -i ~/images
     # web browser
     bindsym $mod+w exec --no-startup-id firefox-wayland
 
@@ -98,9 +83,10 @@ input "type:keyboard" {
     bindsym $mod+F10 exec --no-startup-id mpc toggle
     bindsym $mod+F11 exec --no-startup-id mpc next
 
+    # screenshots
+    bindsym Print exec --no-startup-id ~/scripts/screenshot.sh screen
+    bindsym Shift+Print exec --no-startup-id ~/scripts/screenshot.sh selection
 
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
     floating_modifier $mod normal
 
     # Reload the configuration file

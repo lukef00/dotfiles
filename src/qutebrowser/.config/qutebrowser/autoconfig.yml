@@ -6,10 +6,7 @@
 
 config_version: 2
 settings:
-  bindings.commands:
-    global:
-      normal:
-        <Ctrl+n>: prompt-item-focus next mode = prompt
-      prompt:
-        <Ctrl+n>: prompt-item-focus next
-        <Ctrl+p>: prompt-item-focus prev
+  content.notifications.enabled:
+    https://www.youtube.com: false
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: false

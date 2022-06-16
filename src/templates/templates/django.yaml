@@ -1,0 +1,13 @@
+session_name:
+start_directory:
+windows:
+  - window_name: NVIM
+    panes:
+      - nvim
+  - window_name: shell
+    panes:
+      -
+  - window_name: servers
+    shell_command_before: source venv/bin/activate
+    panes:
+      - manage.py runserver

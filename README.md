@@ -1,6 +1,12 @@
-# Installation
+# Overview
+
+- window manager: **sway**
+- terminal: **foot**
+- wallpaper: [Wallhaven](https://wallhaven.cc/w/k7d8od)
+
+## Installation
 
 ```
-cd src
-stow -t ~ *
+chmod +x install.sh
+./install.sh
 ```

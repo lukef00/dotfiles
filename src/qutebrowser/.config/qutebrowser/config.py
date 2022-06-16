@@ -7,10 +7,6 @@ config.load_autoconfig(False)
 config.bind('<Ctrl-n>', 'completion-item-focus next', mode = 'command')
 config.bind('<Ctrl-p>', 'completion-item-focus prev', mode = 'command')
 
-# start page
-import os
-c.url.start_pages = str(os.environ.get("HOME")) + "/.config/homepage/index.html"
-
 base00 = "#181818"
 base01 = "#282828"
 base02 = "#383838"

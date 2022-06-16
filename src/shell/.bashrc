@@ -15,17 +15,14 @@ alias tks='tmux kill-session'
 alias tl='tmuxp load'
 
 # void commands for power management without using sudo
-alias reboot='loginctl reboot'
-alias poweroff='loginctl poweroff'
+# alias reboot='loginctl reboot'
+# alias poweroff='loginctl poweroff'
 
 # package manager aliases
 alias pmi='sudo xbps-install'       # install package
 alias pmu='sudo xbps-install -Su'   # update system
 alias pmr='sudo xbps-remove'        # remove package
 alias pms='xbps-query -Rs'          # search for package in repositories
-
-# apply pywal colorscheme to terminal
-(cat ~/.cache/wal/sequences &)
 
 # change directory with fzf
 fd() {
