@@ -85,6 +85,8 @@ parse_git_dirty() {
 	fi
 }
 
+(cat ~/.cache/wal/sequences &)
+
 export PS1="\[\033[1;33m\][\u@\[\033[35m\]\h] \[\033[34m\]\w \[\033[31m\]\`parse_git_branch\`\[\033[0;m\]\n\$ "
 export PATH="${PATH}:${HOME}/scripts:${HOME}/.nvm/versions/node/v17.9.0/bin"
 export EDITOR='nvim'

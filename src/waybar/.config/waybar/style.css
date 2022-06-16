@@ -1,24 +1,4 @@
-/* gruvbox colorscheme */
-
-@define-color fg #fbf1c7;
-@define-color bg #1d2021;
-
-@define-color medium_red #cc241d;
-@define-color medium_green #98971a;
-@define-color medium_yellow #d79921;
-@define-color medium_blue #458588;
-@define-color medium_purple #b16286;
-@define-color medium_aqua #689d6a;
-@define-color medium_orange #d65d0e;
-
-@define-color light_red #fb4934;
-@define-color light_green #b8bb26;
-@define-color light_yellow #fabd2f;
-@define-color light_blue #83a598;
-@define-color light_purple #d3869b;
-@define-color light_aqua #8ec07c;
-@define-color light_orange #fe8019;
-
+@import "/home/luke/.cache/wal/colors-waybar.css";
 
 * {
     font-family: "Fira Mono";
@@ -27,72 +7,20 @@
 }
 
 window#waybar {
-    background-color: @bg;
-    color: @fg;
+    background-color: @color0;
+    color: @color7;
 }
 
 #workspaces button {
     margin: 0 5px;
-    color: @fg;
+    color: @color7;
 }
 
 #workspaces button.focused {
-    color: @medium_yellow;
+    color: @color1;
 }
 
 /* modules */
-
-#battery.excellent {
-    color: @light_green;
-}
-
-#battery.good {
-    color: @medium_green;
-}
-
-#battery.average {
-    color: @medium_yellow;
-}
-
-#battery.warning {
-    color: @medium_orange;
-}
-#battery.critical {
-    color: @medium_red;
-}
-
-#pulseaudio.overflow {
-    color: @medium_red;
-}
-
-#pulseaudio.loud {
-    color: @medium_orange;
-}
-
-#pulseaudio.regular {
-    color: @medium_aqua;
-}
-
-#pulseaudio.quiet {
-    color: @medium_blue;
-}
-
-#network.good {
-    color: @medium_green;
-}
-
-#network.average {
-    color: @medium_yellow;
-}
-
-#network.warning {
-    color: @medium_orange;
-}
-
-#memory {
-    color: @medium_purple;
-}
-
-#disk {
-    color: @medium_blue;
+#mpd, #battery, #pulseaudio, #network, #memory, #disk, #clock {
+    color: @color7;
 }

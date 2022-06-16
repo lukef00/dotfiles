@@ -1,14 +1,7 @@
-set $bg #1d2021
-set $fg #fbf1c7
-set $prim #b16286
-set $urgent #cc241d
-set $indicator #d79921
-
-# client.<class> <border <background> <text> [<indicator> <child-border>]
-client.focused $prim $prim $bg $indicator $prim
-client.focused_inactive $bg $bg $fg $bg $bg
-client.urgent $urgent $urgent $fg $indicator $urgent
-client.unfocused $bg $bg $fg $bg $bg
+include "${HOME}/.cache/wal/colors-sway"
+output * background $wallpaper fill
+#               <border> <background> <text> <indicator> <child_border>
+client.focused $color1 $color0 $color0 $color4 $color1
 
 # autostart
 exec --no-startup-id wal -R
@@ -27,14 +20,13 @@ set $menu wofi -S run
 # border
 default_border pixel 3
 
-### Output configuration
-set $wallpaper ~/images/wallpaper.png
-output * bg $wallpaper fill
-
 output HDMI-A-1 {
     resolution 1440x900 
     position 0,0
 }
+
+# wallpaper
+bindsym $mod+b exec --no-startup-id wal --iterative -i ~/images
 
 # lockscreen
 bindsym $mod+Shift+x exec --no-startup-id swaylock -f -c 000000
