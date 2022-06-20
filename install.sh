@@ -7,7 +7,7 @@ install_packages() {
     cd "${HERE}"
     sudo pacman -Syu
     sudo pacman -S --needed - < packages.list
-    sudo usermod -a -G docker libvirt $(whoami)
+    sudo usermod -a -G docker,libvirt $(whoami)
 
     # enable services
     sudo systemctl enable cups
@@ -18,12 +18,12 @@ install_packages() {
 
 copy_dots() {
     # create user directories
-    cd $HOME
+    cd "${HOME}"
+    rm .bashrc
     mkdir .desktop downloads templates notes music images videos $REPOS
 
     # copy dotfiles
     cd "${HERE}/src/"
-    rm "${HOME}/.bashrc"
     stow -t ~ *
 }
 
@@ -36,17 +36,13 @@ mpd_setup() {
 
 misc() {
     cd $REPOS
-    git clone https://dylanaraps/pfetch
+    git clone https://github.com/dylanaraps/pfetch
     cd pfetch
     sudo make install
     cd ..
 
-    # install Nerd Font (Fira Code)
-    mkdir -p "${HOME}/.local/share/fonts/FiraCode"
-    cd "${HOME}/.local/share/fonts/FiraCode"
-    curl -fLo "fonts.zip" https://github.com/ryanoasis/nerd-fonts/releases/download/6.2/Fira_Code_v6.2.zip
-    unzip fonts.zip
-    rm fonts.zip
+    # create folder for additional fonts
+    mkdir -p "${HOME}/.local/share/fonts"
 
     # install gruvbox gtk theme
     cd "$REPOS"
@@ -58,16 +54,12 @@ misc() {
 }
 
 development() {
-    # install nvm, latest node and python language server
+    # install nvm
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
     source "${HOME}/.bashrc"
-    nvm install node
-    npm i -g npm
-    npm i -g pyright
 
     # install packer
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 }
 
 install_packages

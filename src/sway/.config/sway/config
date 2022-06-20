@@ -1,11 +1,13 @@
 include "${HOME}/.cache/wal/colors-sway"
-output * background $wallpaper fill
 #               <border> <background> <text> <indicator> <child_border>
 client.focused $color1 $color0 $color0 $color4 $color1
 
 # autostart
 exec --no-startup-id wal -R
 exec --no-startup-id mako
+
+# wallpaper
+output * background $wallpaper fill
 
 ### Variables
 set $mod Mod4
@@ -25,7 +27,7 @@ output HDMI-A-1 {
     position 0,0
 }
 
-# wallpaper
+# change wallpaper
 bindsym $mod+b exec --no-startup-id wal --iterative -i ~/images
 
 # lockscreen
@@ -36,9 +38,10 @@ exec swayidle -w \
          before-sleep 'swaylock -f -c 000000'
 
 ### Input configuration
-
 input "type:keyboard" {
-    xkb_layout pl,pl
+    xkb_layout pl
+    # map escape to caps lock
+    xkb_options caps:escape
     dwt disabled
     tap disabled
     natural_scroll disabled
@@ -49,9 +52,6 @@ input "type:keyboard" {
 #
 # Basics:
 #
-    # web browser
-    bindsym $mod+w exec --no-startup-id firefox-wayland
-
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -177,33 +177,16 @@ assign [app_id="org.qbittorrent.qBittorrent"] workspace number 10
 #
 # Scratchpad:
 #
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+m move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+m scratchpad show
 #
 # Resizing containers:
 #
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
-
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
 
     # Return to default mode
     bindsym Return mode "default"

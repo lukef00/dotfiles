@@ -7,3 +7,8 @@ noise https://www.youtube.com/watch?v=5qap5aO4i9A
 gerbera http://pi4.localdomain:49152/
 transmission http://pi4.localdomain:9091/transmission/web/
 local server http://localhost:8000/
+django-tags https://docs.djangoproject.com/en/4.0/ref/templates/builtins/#ref-templates-builtins-tags
+keyboard https://github.com/foostan/crkbd
+django-auth https://docs.djangoproject.com/en/4.0/topics/auth/default/
+login view https://docs.djangoproject.com/en/4.0/topics/auth/default/#django.contrib.auth.views.LoginView
+django user https://docs.djangoproject.com/en/4.0/ref/contrib/auth/#django.contrib.auth.models.User

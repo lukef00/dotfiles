@@ -6,6 +6,7 @@ bison
 bluez
 bluez-utils
 brightnessctl
+clang
 cups
 dmidecode
 dnsmasq
@@ -35,6 +36,8 @@ imv
 intel-ucode
 iptables-nft
 libnotify
+libreoffice-fresh
+libreoffice-fresh-pl
 libtool
 lightdm
 lightdm-gtk-greeter
@@ -85,9 +88,12 @@ ueberzug
 unrar
 unzip
 virt-manager
+vlc
 waybar
 which
 wl-clipboard
 wofi
 xdg-user-dirs
+zathura
+zathura-pdf-mupdf
 zip

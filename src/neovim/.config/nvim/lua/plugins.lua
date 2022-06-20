@@ -56,5 +56,6 @@ return require('packer').startup(function()
     }
 
     use { 'numToStr/Comment.nvim' }
+    use { 'tpope/vim-surround' }
 
 end)
