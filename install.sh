@@ -2,12 +2,13 @@
 
 HERE="$(pwd)"
 REPOS="${HOME}/repos"
+USER="$(whoami)"
 
 install_packages() {
     cd "${HERE}"
     sudo pacman -Syu
     sudo pacman -S --needed - < packages.list
-    sudo usermod -a -G docker,libvirt $(whoami)
+    sudo usermod -a -G docker,libvirt $USER
 
     # enable services
     sudo systemctl enable cups
@@ -20,7 +21,7 @@ copy_dots() {
     # create user directories
     cd "${HOME}"
     rm .bashrc
-    mkdir .desktop downloads templates notes music images videos $REPOS
+    mkdir .desktop downloads templates notes music images videos $REPOS -p
 
     # copy dotfiles
     cd "${HERE}/src/"

@@ -1,0 +1,6 @@
+[user]
+	name = Łukasz Flisak
+	email = lu.dev00@gmail.com
+	signingkey = 42BA08AB02827FB9
+[init]
+	defaultBranch = master
