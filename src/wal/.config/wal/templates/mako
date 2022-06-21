@@ -1,0 +1,9 @@
+font=FuraCode NF 10
+background-color={color0}
+text-color={color7}
+width=350
+height=200
+border-size=3
+border-color={color1}
+format=<span foreground="{color5}"><b>%s</b></span>\n%b\n
+default-timeout=5000

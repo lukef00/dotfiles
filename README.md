@@ -1,12 +1,16 @@
 # Overview
 
-- window manager: **sway**
-- terminal: **foot**
-- wallpaper: [Wallhaven](https://wallhaven.cc/w/k7d8od)
+![preview](preview.png)
 
 ## Installation
 
 ```
 chmod +x install.sh
 ./install.sh
+```
+
+On first run create symbolic link for mako:
+
+```
+ln -s ~/.cache/wal/mako ~/.config/mako/config
 ```

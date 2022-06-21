@@ -21,7 +21,7 @@ copy_dots() {
     # create user directories
     cd "${HOME}"
     rm .bashrc
-    mkdir .desktop downloads templates notes music images videos $REPOS -p
+    mkdir "${HOME}/.config/mako" .desktop downloads templates notes music images videos $REPOS -p
 
     # copy dotfiles
     cd "${HERE}/src/"

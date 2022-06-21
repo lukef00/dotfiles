@@ -5,6 +5,7 @@ client.focused $color1 $color0 $color0 $color4 $color1
 # autostart
 exec --no-startup-id wal -R
 exec --no-startup-id mako
+exec_always ~/scripts/gtk-theme.sh
 
 # wallpaper
 output * background $wallpaper fill

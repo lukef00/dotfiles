@@ -18,12 +18,6 @@ alias tl='tmuxp load'
 # alias reboot='loginctl reboot'
 # alias poweroff='loginctl poweroff'
 
-# package manager aliases
-alias pmi='sudo xbps-install'       # install package
-alias pmu='sudo xbps-install -Su'   # update system
-alias pmr='sudo xbps-remove'        # remove package
-alias pms='xbps-query -Rs'          # search for package in repositories
-
 # change directory with fzf
 fd() {
   local dir
