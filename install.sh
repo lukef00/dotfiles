@@ -15,6 +15,7 @@ install_packages() {
     sudo systemctl enable tlp
     sudo systemctl enable docker
     sudo systemctl enable libvirtd
+    sudo systemctl enable bluetooth
 }
 
 copy_dots() {
@@ -29,7 +30,7 @@ copy_dots() {
 }
 
 mpd_setup() {
-    # mpd setup
+    # create directory for mpd files and start mpd user service
     mkdir -p ${HOME}/.mpd-data/{playlists,ncmpcpp}
     touch ${HOME}/.mpd-data/{db,log,pid,sticker,state}_file
     systemctl enable --now --user mpd
@@ -61,6 +62,9 @@ development() {
 
     # install packer
     git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+    # install plugin manager for tmux
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 install_packages

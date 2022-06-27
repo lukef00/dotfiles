@@ -9,7 +9,8 @@
 		"network",
 		"memory",
 		"disk",
-		"clock"
+		"clock",
+		"tray"
     ],
 		
     "sway/workspaces": {
@@ -37,15 +38,15 @@
             "quiet": 0
         },
         "format": "{icon} {volume}%",
-        "format-icons": [
-            "<span font='14' rise='-3000'>奄</span>",
-            "<span font='14' rise='-3000'>奔</span>", 
-            "<span font='14' rise='-3000'>墳</span>", 
-            "<span font='14' rise='-3000'>墳</span>"
-        ],
+        "format-icons": {
+            "headphone": "<span font='14' rise='-3000'></span>",
+            "bluetooth": "<span font='14' rise='-3000' 﫽</span>",
+            "headset": "<span font='14' rise='-3000'></span>",
+            "default": "<span font='14' rise='-3000'>墳</span>"
+        },
         "format-muted": "{icon} muted",
-        "format-bluetooth": "{volume}%",
-        "format-muted": "muted",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "<span font='14' rise='-3000'>ﱝ</span>",
         "on-click": "pavucontrol"
     },
 
@@ -96,6 +97,12 @@
         "format": "<span font='14' rise='-2000'></span> {:%A, %d %b %H:%M}",
         "timezone": "Europe/Warsaw",
         "locale": "pl_PL.UTF-8"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "show-passive-items": true,
+        "spacing": 5
     }
 
 }
